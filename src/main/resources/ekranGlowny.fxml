@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EkranGlowny">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutY="1.0" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="473.0" prefWidth="213.0">
+               <children>
+                  <Button layoutX="113.0" layoutY="174.0" mnemonicParsing="false" onAction="#dodaj" text="Dodaj" />
+                  <TextField fx:id="enterText" layoutX="14.0" layoutY="109.0" prefHeight="25.0" prefWidth="149.0" promptText="kwota" />
+                  <Label layoutX="14.0" layoutY="14.0" text="Dodaj:" />
+                  <Button layoutX="82.0" layoutY="353.0" mnemonicParsing="false" onAction="#generujPlik" text="Generuj plik" />
+                  <ChoiceBox fx:id="typOperacji" layoutX="13.0" layoutY="39.0" prefWidth="149.0" />
+                  <Label fx:id="log" alignment="CENTER" layoutX="15.0" layoutY="218.0" prefHeight="17.0" prefWidth="149.0" text="kwota" />
+                  <DatePicker fx:id="data" layoutX="14.0" layoutY="75.0" prefHeight="25.0" prefWidth="149.0" />
+                  <Label fx:id="currentData" alignment="CENTER" layoutX="14.0" layoutY="269.0" prefHeight="17.0" prefWidth="149.0" text="data" />
+                  <TextField fx:id="opisInput" layoutX="14.0" layoutY="142.0" prefHeight="25.0" prefWidth="149.0" promptText="opis" />
+                  <Label fx:id="opis" alignment="CENTER" layoutX="15.0" layoutY="244.0" prefHeight="17.0" prefWidth="149.0" text="opis" />
+                  <Label layoutX="18.0" layoutY="329.0" text="Stan konta: " />
+                  <Label fx:id="stanKonta" layoutX="88.0" layoutY="329.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.11779448621553884" layoutY="1.0" orientation="VERTICAL" prefHeight="401.0" prefWidth="417.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="115.0" prefWidth="415.0">
+                           <children>
+                              <Label fx:id="userHellow" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="129.0" text="Witaj xx" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0">
+                           <children>
+                              <BarChart fx:id="wykres1" layoutX="13.0" layoutY="17.0" prefHeight="315.0" prefWidth="390.0" title="Operacje">
+                                <xAxis>
+                                  <CategoryAxis label="data" side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis label="kwota" side="LEFT" />
+                                </yAxis>
+                              </BarChart>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

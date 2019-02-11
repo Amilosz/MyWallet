@@ -22,8 +22,8 @@ public class Rejestracja {
     private PasswordField passwordConfirm;
     @FXML
     private Label label;
-
-    public void rejestruj (ActionEvent event) throws Exception
+    public LoginModel loginModel = new LoginModel();
+    public void zarejestruj (ActionEvent event) throws Exception
     {
         if (username.getText().isEmpty() || password.getText().isEmpty() || passwordConfirm.getText().isEmpty()
                 || email.getText().isEmpty())
@@ -31,24 +31,24 @@ public class Rejestracja {
 
             label.setText("Wpisz wszystkie dane");
         }
-        else if (passwordConfirm!=password)
+        else if (!passwordConfirm.getText().equals(password.getText()))
         {
             label.setText("Hasla są niepoprawne");
         }
         else
         {
-            Parent root = FXMLLoader.load(getClass().getResource("ekranGlowny.fxml"));
-            Scene ekranGlowny= new Scene (root);
-
+            loginModel.register(username.getText(), password.getText(), email.getText());
+            Parent root = FXMLLoader.load(getClass().getResource("/logowanie.fxml"));
+            Scene logowanie= new Scene (root);
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-            window.setScene(ekranGlowny);
+            window.setScene(logowanie);
             window.show();
         }
     }
     public void powrotDoLogowania (ActionEvent event) throws Exception
     {
 
-        Parent root = FXMLLoader.load(getClass().getResource("logowanie.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/logowanie.fxml"));
         Scene login= new Scene (root);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
