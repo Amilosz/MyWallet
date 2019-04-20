@@ -1,3 +1,3 @@
 # MyWallet
-Aplication to control yoy\ur money!
+Aplication to control your money!
 Wrote in JavaFx, using Maven.
